@@ -8,6 +8,7 @@
 
 import XCTest
 import Alamofire
+import SwiftyJSON
 @testable import FizzBuzz
 
 class BrainTests: XCTestCase {
@@ -134,7 +135,7 @@ class BrainTests: XCTestCase {
             ex.fulfill()
             
             if let data = response.result.value {
-                var image = UIImage(data: data)
+           //     var image = UIImage(data: data)
                 print("ending")
             }
         }
@@ -146,6 +147,19 @@ class BrainTests: XCTestCase {
                 XCTFail("error: \(error)")
             }
         }
+    }
+    
+    func testParseJson() {
+        let json = "{ \"people\": [{ \"firstName\": \"Paul\", \"lastName\": \"Hudson\", \"isAlive\": true }, { \"firstName\": \"Angela\", \"lastName\": \"Merkel\", \"isAlive\": true }, { \"firstName\": \"George\", \"lastName\": \"Washington\", \"isAlive\": false } ] }";
+        
+        if let data = json.data(using: String.Encoding.utf8) {
+            let json = JSON(data: data)
+            
+            for item in json["people"].arrayValue {
+                print(item["firstName"].stringValue)
+            }
+        }
+        
     }
     
 }
