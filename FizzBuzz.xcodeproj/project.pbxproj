@@ -16,7 +16,10 @@
 		D00397971DA500F20079569C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D00397951DA500F20079569C /* LaunchScreen.storyboard */; };
 		D00397A21DA500F20079569C /* FizzBuzzTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00397A11DA500F20079569C /* FizzBuzzTests.swift */; };
 		D00397AD1DA500F20079569C /* FizzBuzzUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00397AC1DA500F20079569C /* FizzBuzzUITests.swift */; };
-		D0C43DF81DAA66F2000F086F /* BrainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C43DF71DAA66F2000F086F /* BrainTests.swift */; };
+		D054C1061DAE7E37002E3DAB /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D054C1051DAE7E37002E3DAB /* WeatherResponse.swift */; };
+		D054C1081DAE7E8D002E3DAB /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = D054C1071DAE7E8D002E3DAB /* Forecast.swift */; };
+		D08CBA4C1DAFC18900003C74 /* CaptchaKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08CBA4B1DAFC18900003C74 /* CaptchaKey.swift */; };
+		D08CBA4F1DB2836900003C74 /* HttpCilent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08CBA4E1DB2836900003C74 /* HttpCilent.swift */; };
 		D0C43E011DAA66FF000F086F /* Brain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C43E001DAA66FF000F086F /* Brain.swift */; };
 		F184C1FEAE618E3BE445CDC2 /* Pods_FizzBuzzUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B6C4B40E9DF8B17663E81E /* Pods_FizzBuzzUITests.framework */; };
 /* End PBXBuildFile section */
@@ -116,8 +119,11 @@
 		D00397A81DA500F20079569C /* FizzBuzzUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FizzBuzzUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D00397AC1DA500F20079569C /* FizzBuzzUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FizzBuzzUITests.swift; sourceTree = "<group>"; };
 		D00397AE1DA500F20079569C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D054C1051DAE7E37002E3DAB /* WeatherResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
+		D054C1071DAE7E8D002E3DAB /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
+		D08CBA4B1DAFC18900003C74 /* CaptchaKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptchaKey.swift; sourceTree = "<group>"; };
+		D08CBA4E1DB2836900003C74 /* HttpCilent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpCilent.swift; sourceTree = "<group>"; };
 		D0C43DDB1DAA6548000F086F /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
-		D0C43DF71DAA66F2000F086F /* BrainTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrainTests.swift; sourceTree = "<group>"; };
 		D0C43E001DAA66FF000F086F /* Brain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Brain.swift; sourceTree = "<group>"; };
 		E2A102FBC3429005407CE5D9 /* Pods_FizzBuzz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FizzBuzz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -199,6 +205,7 @@
 		D003978B1DA500F10079569C /* FizzBuzz */ = {
 			isa = PBXGroup;
 			children = (
+				D054C0FC1DAE7E02002E3DAB /* api */,
 				D0C43E001DAA66FF000F086F /* Brain.swift */,
 				D003978C1DA500F20079569C /* AppDelegate.swift */,
 				D003978E1DA500F20079569C /* ViewController.swift */,
@@ -213,7 +220,6 @@
 		D00397A01DA500F20079569C /* FizzBuzzTests */ = {
 			isa = PBXGroup;
 			children = (
-				D0C43DF71DAA66F2000F086F /* BrainTests.swift */,
 				D00397A11DA500F20079569C /* FizzBuzzTests.swift */,
 				D00397A31DA500F20079569C /* Info.plist */,
 			);
@@ -227,6 +233,33 @@
 				D00397AE1DA500F20079569C /* Info.plist */,
 			);
 			path = FizzBuzzUITests;
+			sourceTree = "<group>";
+		};
+		D054C0FC1DAE7E02002E3DAB /* api */ = {
+			isa = PBXGroup;
+			children = (
+				D08CBA4D1DB2835B00003C74 /* util */,
+				D054C1041DAE7E15002E3DAB /* entity */,
+			);
+			name = api;
+			sourceTree = "<group>";
+		};
+		D054C1041DAE7E15002E3DAB /* entity */ = {
+			isa = PBXGroup;
+			children = (
+				D054C1051DAE7E37002E3DAB /* WeatherResponse.swift */,
+				D054C1071DAE7E8D002E3DAB /* Forecast.swift */,
+				D08CBA4B1DAFC18900003C74 /* CaptchaKey.swift */,
+			);
+			name = entity;
+			sourceTree = "<group>";
+		};
+		D08CBA4D1DB2835B00003C74 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				D08CBA4E1DB2836900003C74 /* HttpCilent.swift */,
+			);
+			name = util;
 			sourceTree = "<group>";
 		};
 		D0C43DDC1DAA6548000F086F /* Products */ = {
@@ -570,6 +603,10 @@
 				D003978F1DA500F20079569C /* ViewController.swift in Sources */,
 				D0C43E011DAA66FF000F086F /* Brain.swift in Sources */,
 				D003978D1DA500F20079569C /* AppDelegate.swift in Sources */,
+				D054C1061DAE7E37002E3DAB /* WeatherResponse.swift in Sources */,
+				D08CBA4F1DB2836900003C74 /* HttpCilent.swift in Sources */,
+				D08CBA4C1DAFC18900003C74 /* CaptchaKey.swift in Sources */,
+				D054C1081DAE7E8D002E3DAB /* Forecast.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,7 +614,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0C43DF81DAA66F2000F086F /* BrainTests.swift in Sources */,
 				D00397A21DA500F20079569C /* FizzBuzzTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -648,6 +684,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -698,6 +735,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -727,6 +765,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 09444DFAF0A7A5A585B4D2F2 /* Pods-FizzBuzz.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FizzBuzz/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -740,6 +779,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A952C440A5DDCED4CA039AF8 /* Pods-FizzBuzz.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FizzBuzz/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
