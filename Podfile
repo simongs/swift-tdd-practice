@@ -8,6 +8,7 @@ target 'FizzBuzz' do
   # Pods for FizzBuzz
   pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
   pod 'AlamofireObjectMapper', :git => 'https://github.com/tristanhimmelman/AlamofireObjectMapper'
+  
   target 'FizzBuzzTests' do
     inherit! :search_paths
     # Pods for testing

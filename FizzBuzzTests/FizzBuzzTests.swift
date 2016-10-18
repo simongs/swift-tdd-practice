@@ -68,7 +68,7 @@ class FizzBuzzTests: XCTestCase {
         
         print("ending")
         
-        waitForExpectations(timeout: 10) { (error) in
+        waitForExpectations(timeout: 100) { (error) in
             if let error = error {
                 XCTFail("error: \(error)")
             }
